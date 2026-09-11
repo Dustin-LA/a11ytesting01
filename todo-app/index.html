@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>My Todos</h1>
+
+    <form id="todo-form" class="todo-form" autocomplete="off">
+      <label for="todo-input" class="visually-hidden">Add a new todo</label>
+      <input
+        type="text"
+        id="todo-input"
+        name="todo"
+        class="todo-input"
+        placeholder="What needs to be done?"
+        aria-describedby="todo-hint"
+        required
+      />
+      <button type="submit" class="add-btn">Add</button>
+      <p id="todo-hint" class="visually-hidden">
+        Type a task and press Add or Enter to save it.
+      </p>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <section aria-labelledby="list-heading">
+      <h2 id="list-heading" class="visually-hidden">Todo list</h2>
+      <ul id="todo-list" class="todo-list"></ul>
+      <p id="empty-message" class="empty-message">No todos yet. Add one above!</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
