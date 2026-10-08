@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>My Todos</h1>
+
+    <form id="todo-form" class="todo-form" autocomplete="off">
+      <label for="todo-input" class="visually-hidden">Add a new task</label>
+      <input
+        type="text"
+        id="todo-input"
+        name="todo"
+        class="todo-input"
+        placeholder="What needs to be done?"
+        aria-describedby="todo-help"
+        required
+      />
+      <button type="submit" class="btn btn-add">Add</button>
+    </form>
+    <p id="todo-help" class="todo-help">Press Enter or click Add to create a task.</p>
+
+    <section aria-labelledby="list-heading">
+      <div class="list-header">
+        <h2 id="list-heading">Tasks</h2>
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button type="button" class="btn btn-filter is-active" data-filter="all">All</button>
+          <button type="button" class="btn btn-filter" data-filter="active">Active</button>
+          <button type="button" class="btn btn-filter" data-filter="completed">Completed</button>
+        </div>
+      </div>
+
+      <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+
+      <p id="empty-state" class="empty-state" hidden>Nothing here yet. Add your first task above!</p>
+
+      <footer class="list-footer">
+        <span id="item-count" class="item-count" aria-live="polite">0 items left</span>
+        <button type="button" id="clear-completed" class="btn btn-clear">Clear completed</button>
+      </footer>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
